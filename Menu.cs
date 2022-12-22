@@ -12,7 +12,8 @@ namespace EditorHtml
 
             DrawHorizontal();
             DrawVertical();
-            DrawHorizontal();
+            Options();
+            
         }
 
         public static void DrawHorizontal()
@@ -37,6 +38,26 @@ namespace EditorHtml
                 Console.Write("|");
                 Console.WriteLine();
             }
+        }
+
+        public static void Options()
+        {
+            Console.SetCursorPosition(3, 2);
+            Console.WriteLine("Editor HTML");
+            Console.SetCursorPosition(3 ,3);
+            Console.WriteLine("--------------------");
+            Console.SetCursorPosition(3, 4);
+            Console.WriteLine("Selecione uma opção");
+            Console.SetCursorPosition(3, 6);
+            Console.WriteLine("1 - Abrir arquivo");
+            Console.SetCursorPosition(3, 7);
+            Console.WriteLine("2 - Editar arquivo");
+            Console.SetCursorPosition(3, 9);
+            Console.WriteLine("0 - -Sair");
+            Console.SetCursorPosition(3, 10);
+            Console.Write("Opção: ");
+
+            var option = short.Parse(Console.ReadLine());
         }
     }
 }
