@@ -13,6 +13,7 @@ namespace EditorHtml
             DrawHorizontal();
             DrawVertical();
             Options();
+            DrawHorizontal();
             
         }
 
@@ -58,6 +59,46 @@ namespace EditorHtml
             Console.Write("Opção: ");
 
             var option = short.Parse(Console.ReadLine());
+            HandleMenuOption(option);
+        }
+
+        public static void HandleMenuOption(short option)
+        {
+            switch (option)
+            {
+                case 0:
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+
+                case 1:
+                    Editor.Show();
+                    break;
+
+                case 2:
+                    Create();
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida!");
+                    Show();
+                    break;
+            }
+        }
+
+        public static void Open()
+        {
+            Console.WriteLine("Abrir");
+        }
+
+        public static void Create()
+        {
+            Console.WriteLine("Editar");
+        }
+
+        public static void Save()
+        {
+            Console.WriteLine("Editar");
         }
     }
 }
